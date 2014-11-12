@@ -223,5 +223,6 @@ public class SystemSettingsValidators {
                         return true;
                     }
                 });
+        VALIDATORS.put(System.SCREENSHOT_SOUND, BOOLEAN_VALIDATOR);
     }
 }
