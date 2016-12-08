@@ -46,4 +46,7 @@
     <!-- Enable face auth only when swiping security view -->
     <java-symbol type="bool" name="config_faceAuthOnlyOnSecurityView" />
 
+  <!-- Whether doze feature is enabled by default in settings -->
+  <java-symbol type="bool" name="config_doze_enabled_by_default" />
+
 </resources>
