@@ -304,6 +304,9 @@
     <uses-permission android:name="android.permission.MAINLINE_NETWORK_STACK" />
     <uses-permission android:name="android.permission.NETWORK_STACK" />
 
+    <!-- Screenshot tile -->
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
