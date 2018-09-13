@@ -5164,6 +5164,12 @@ public final class Settings {
         public static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
 
         /**
+	 ** Whether to use partial screenshot when using volume keys
+	 ** @hide
+	 **/
+        public static final String SCREENSHOT_TYPE = "screenshot_type";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
@@ -5300,6 +5306,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(LOCKSCREEN_BATTERY_INFO);
             PRIVATE_SETTINGS.add(NOTIFICATION_HEADERS);
             PRIVATE_SETTINGS.add(STATUSBAR_ICONS_STYLE);
+            PRIVATE_SETTINGS.add(SCREENSHOT_TYPE);
         }
 
         /**
