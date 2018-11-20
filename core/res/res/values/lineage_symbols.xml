@@ -46,11 +46,14 @@
     <!-- Enable face auth only when swiping security view -->
     <java-symbol type="bool" name="config_faceAuthOnlyOnSecurityView" />
 
-  <!-- Whether doze feature is enabled by default in settings -->
-  <java-symbol type="bool" name="config_doze_enabled_by_default" />
+    <!-- Whether doze feature is enabled by default in settings -->
+    <java-symbol type="bool" name="config_doze_enabled_by_default" />
 
     <!-- Smart cutoff temperature -->
     <java-symbol type="integer" name="config_smartCutoffTemperature" />
     <java-symbol type="integer" name="config_smartCutoffResumeTemperature" />
+
+    <!-- System fonts -->
+     <java-symbol type="array" name="config_fontPackages" />
 
 </resources>
