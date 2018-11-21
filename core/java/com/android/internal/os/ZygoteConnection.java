@@ -25,6 +25,7 @@ import static com.android.internal.os.ZygoteConnectionConstants.WRAPPED_PID_TIME
 
 import android.compat.annotation.UnsupportedAppUsage;
 import android.content.pm.ApplicationInfo;
+import android.graphics.Typeface;
 import android.net.Credentials;
 import android.net.LocalSocket;
 import android.os.Parcel;
@@ -210,6 +211,21 @@ class ZygoteConnection {
                 Zygote.applyInvokeWithSystemProperty(parsedArgs);
 
                 int[][] rlimits = null;
+        if (parsedArgs.refreshTheme) {
+            Typeface.recreateDefaults();
+        }
+
+        /**
+         * In order to avoid leaking descriptors to the Zygote child,
+         * the native code must close the two Zygote socket descriptors
+         * in the child process before it switches from Zygote-root to
+         * the UID and privileges of the application being launched.
+         *
+         * In order to avoid "bad file descriptor" errors when the
+         * two LocalSocket objects are closed, the Posix file
+         * descriptors are released via a dup2() call which closes
+         * the socket and substitutes an open descriptor to /dev/null.
+         */
 
                 if (parsedArgs.mRLimits != null) {
                     rlimits = parsedArgs.mRLimits.toArray(Zygote.INT_ARRAY_2D);
