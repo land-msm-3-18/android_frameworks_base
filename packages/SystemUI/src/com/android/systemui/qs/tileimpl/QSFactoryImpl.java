@@ -52,6 +52,7 @@ import com.android.systemui.qs.tiles.ProfilesTile;
 import com.android.systemui.qs.tiles.ReadingModeTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
 import com.android.systemui.qs.tiles.ScreenRecordTile;
+import com.android.systemui.qs.tiles.SoundTile;
 import com.android.systemui.qs.tiles.SyncTile;
 import com.android.systemui.qs.tiles.UiModeNightTile;
 import com.android.systemui.qs.tiles.UsbTetherTile;
@@ -107,6 +108,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<VolumeTile> mVolumeTileProvider;
     private final Provider<VpnTile> mVpnTileProvider;
     private final Provider<AntiFlickerTile> mAntiFlickerTileProvider;
+    private final Provider<SoundTile> mSoundTileProvider;
 
     private final Lazy<QSHost> mQsHostLazy;
 
@@ -145,7 +147,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<VolumeTile> volumeTileProvider,
             Provider<VpnTile> vpnTileProvider,
             Provider<AntiFlickerTile> antiFlickerTileProvider,
-            Provider<DataSwitchTile> dataSwitchTileProvider) {
+            Provider<DataSwitchTile> dataSwitchTileProvider,
+            Provider<SoundTile> soundTileProvider) {
         mQsHostLazy = qsHostLazy;
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
@@ -181,6 +184,7 @@ public class QSFactoryImpl implements QSFactory {
         mVpnTileProvider = vpnTileProvider;
         mAntiFlickerTileProvider = antiFlickerTileProvider;
         mDataSwitchTileProvider = dataSwitchTileProvider;
+        mSoundTileProvider = soundTileProvider;
     }
 
     public QSTile createTile(String tileSpec) {
@@ -261,6 +265,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mAntiFlickerTileProvider.get();
             case "dataswitch":
                 return mDataSwitchTileProvider.get();
+            case "sound":
+                return mSoundTileProvider.get();
         }
 
         // Custom tiles
