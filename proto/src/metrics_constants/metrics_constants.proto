@@ -7442,5 +7442,8 @@ message MetricsEvent {
 
     // ABC
     ABC = 5000;
+
+    // Blinx Settings
+    BLINX_SETTINGS = 4000;
   }
 }
