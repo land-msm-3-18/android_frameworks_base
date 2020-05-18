@@ -42,4 +42,8 @@
     <!-- Burn-in protection -->
     <dimen name="burnin_protection_horizontal_shift">3dp</dimen>
     <dimen name="burnin_protection_vertical_shift">1dp</dimen>
+
+    <!-- Biometric Prompt -->
+    <dimen name="biometric_dialog_fod_margin">12dp</dimen>
+
 </resources>
