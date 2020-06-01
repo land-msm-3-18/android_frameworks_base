@@ -36,4 +36,7 @@
          the sensor embedded in the power key and listening all the time
          causes a poor experience. -->
     <bool name="config_fingerprintWakeAndUnlock">true</bool>
+
+    <!-- Whether to dim the FOD icon -->
+    <bool name="config_fodIconDim">false</bool>
 </resources>
