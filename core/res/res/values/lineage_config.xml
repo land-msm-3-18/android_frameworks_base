@@ -52,4 +52,7 @@
     <string name="config_SmartChargingSuspendValue" translatable="false">0</string>
     <string name="config_SmartChargingResumeValue" translatable="false">1</string>
 
+    <!-- Whether device has fingerprint on power button -->
+    <bool name="config_powerButtonFingerprint">false</bool>
+
 </resources>
