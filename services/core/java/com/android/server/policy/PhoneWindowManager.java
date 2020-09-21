@@ -1120,6 +1120,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
         final boolean handledByPowerManager = mPowerManagerInternal.interceptPowerKeyDown(event);
 
+
         GestureLauncherService gestureService = LocalServices.getService(
                 GestureLauncherService.class);
         boolean gesturedServiceIntercepted = false;
