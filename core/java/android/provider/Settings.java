@@ -5042,6 +5042,10 @@ public final class Settings {
          * @hide
          */
         public static final String SCREENSHOT_SOUND = "screenshot_sound";
+        public static final String NOTIFICATION_HEADERS = "notification_headers";
+
+        /** @hide */
+        public static final String BACK_GESTURE_HAPTIC = "back_gesture_haptic";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
@@ -5168,6 +5172,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(INCALL_FEEDBACK_VIBRATE);
    	    PRIVATE_SETTINGS.add(QS_PANEL_BG_USE_NEW_TINT);
             PRIVATE_SETTINGS.add(COLOR_BUCKET_OVERLAY);
+            PRIVATE_SETTINGS.add(BACK_GESTURE_HAPTIC);
         }
 
         /**
