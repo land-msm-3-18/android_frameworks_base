@@ -89,5 +89,6 @@ public class SystemSettings {
         Settings.System.COLOR_BUCKET_OVERLAY,
         Settings.System.SCREENSHOT_SOUND,
         Settings.System.QS_MEDIA_PLAYER,
+        Settings.System.NOTIFICATION_HEADERS
     };
 }
