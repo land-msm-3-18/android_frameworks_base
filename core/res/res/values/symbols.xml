@@ -4440,7 +4440,7 @@
   <!-- For dynamic default font styles -->
   <java-symbol type="string" name="config_bodyFontFamily" />
 
-    <!-- Ambiant Pulse Light -->
-    <java-symbol type="integer" name="config_AmbiantPulseLightColor" />
+    <!-- Ambient notification light color -->
+    <java-symbol type="integer" name="config_ambientNotificationDefaultColor" />
 
 </resources>
