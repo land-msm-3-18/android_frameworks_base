@@ -235,7 +235,7 @@ public interface BluetoothProfile {
      *
      * @hide
      */
-    int MAX_PROFILE_ID = 27;
+    int MAX_PROFILE_ID = 26;
 
     /**
      * Default priority for devices that we try to auto-connect to and
