@@ -1563,12 +1563,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 cancelPendingPowerKeyAction();
                 if (Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.SCREENSHOT_TYPE, 0, UserHandle.USER_CURRENT) == 1) {
-                    mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_SELECTED_REGION);
-                } else {
-                    mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
-                }
-                mScreenshotRunnable.setScreenshotSource(SCREENSHOT_KEY_CHORD);
-                mHandler.postDelayed(mScreenshotRunnable, getScreenshotChordLongPressDelay());
+                    takeScreenshot(TAKE_SCREENSHOT_SELECTED_REGION, getScreenshotChordLongPressDelay(), SCREENSHOT_KEY_CHORD);
+               } else {
+                    takeScreenshot(TAKE_SCREENSHOT_FULLSCREEN, getScreenshotChordLongPressDelay(), SCREENSHOT_KEY_CHORD);
+               }
             }
         }
     }
@@ -1673,6 +1671,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     }
 
     private final ScreenshotRunnable mScreenshotRunnable = new ScreenshotRunnable();
+
+    private void takeScreenshot(int screenshotType, long delay, int screenshotSource) {
+        mHandler.removeCallbacks(mScreenshotRunnable);
+        mScreenshotRunnable.setScreenshotType(screenshotType);
+        mScreenshotRunnable.setScreenshotSource(screenshotSource);
+        mHandler.postDelayed(mScreenshotRunnable, delay);
+    }
 
     @Override
     public void showGlobalActions() {
@@ -3278,11 +3283,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             if (down && repeatCount == 0) {
                 int type = event.isShiftPressed() ? TAKE_SCREENSHOT_SELECTED_REGION
                         : TAKE_SCREENSHOT_FULLSCREEN;
-                mScreenshotRunnable.setScreenshotType(type);
-                mScreenshotRunnable.setScreenshotSource(SCREENSHOT_KEY_OTHER);
-                mHandler.post(mScreenshotRunnable);
-                return -1;
+                takeScreenshot(type, 0, SCREENSHOT_KEY_OTHER);
             }
+            return -1;
         } else if (keyCode == KeyEvent.KEYCODE_SLASH && event.isMetaPressed()) {
             if (down && repeatCount == 0 && !isKeyguardLocked()) {
                 toggleKeyboardShortcutsMenu(event.getDeviceId());
@@ -3295,9 +3298,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             return -1;
         } else if (keyCode == KeyEvent.KEYCODE_SYSRQ) {
             if (down && repeatCount == 0) {
-                mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
-                mScreenshotRunnable.setScreenshotSource(SCREENSHOT_KEY_OTHER);
-                mHandler.post(mScreenshotRunnable);
+                takeScreenshot(TAKE_SCREENSHOT_FULLSCREEN, 0, SCREENSHOT_KEY_OTHER);
             }
             return -1;
         } else if (keyCode == KeyEvent.KEYCODE_BRIGHTNESS_UP
@@ -4392,8 +4393,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
                         if (mClickPartialScreenshot && mClickPartialScreenshotAllowed &&
                                 mScreenshotChordVolumeDownKeyConsumed) {
-                            mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_SELECTED_REGION);
-                            mHandler.post(mScreenshotRunnable);
+                           takeScreenshot(TAKE_SCREENSHOT_SELECTED_REGION, 0, SCREENSHOT_KEY_CHORD);
                         }
 
                         mClickPartialScreenshotAllowed = true;
@@ -6207,14 +6207,12 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 mContext.enforceCallingOrSelfPermission(Manifest.permission.ACCESS_SURFACE_FLINGER,
                         TAG + "sendCustomAction permission denied");
                 mHandler.removeCallbacks(mScreenshotRunnable);
-                mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
-                mHandler.post(mScreenshotRunnable);
+                takeScreenshot(TAKE_SCREENSHOT_FULLSCREEN, 0, SCREENSHOT_KEY_OTHER);
             } else if (forkUtils.INTENT_REGION_SCREENSHOT.equals(action)) {
                 mContext.enforceCallingOrSelfPermission(Manifest.permission.ACCESS_SURFACE_FLINGER,
                         TAG + "sendCustomAction permission denied");
                 mHandler.removeCallbacks(mScreenshotRunnable);
-                mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_SELECTED_REGION);
-                mHandler.post(mScreenshotRunnable);
+                takeScreenshot(TAKE_SCREENSHOT_SELECTED_REGION, 0, SCREENSHOT_KEY_OTHER);
             }
         }
     }
