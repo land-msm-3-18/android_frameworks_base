@@ -73,5 +73,6 @@ public class GlobalSettings {
         Settings.Global.CUSTOM_BUGREPORT_HANDLER_APP,
         Settings.Global.CUSTOM_BUGREPORT_HANDLER_USER,
         Settings.Global.DEVELOPMENT_SETTINGS_ENABLED
+        Settings.Global.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN
     };
 }
