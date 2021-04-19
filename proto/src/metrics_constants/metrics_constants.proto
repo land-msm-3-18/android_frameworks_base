@@ -7445,5 +7445,9 @@ message MetricsEvent {
 
     // Blinx Settings
     BLINX_SETTINGS = 4000;
+
+    // Fork Lineage
+    FORKLINEAGE = 3000;
+
   }
 }
