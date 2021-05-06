@@ -63,4 +63,7 @@
     <dimen name="dismiss_all_button_width">55dp</dimen>
     <dimen name="dismiss_all_fab_src_size">30dp</dimen>
 
+    <!-- Height of a the shelf with the notification icons -->
+    <dimen name="notification_shelf_height">40dp</dimen>
+
 </resources>
