@@ -31,6 +31,7 @@ public class ThemesUtils {
         "com.android.system.switch.telegram", // 1
         "com.android.system.switch.md2", // 2
         "com.android.system.switch.oos", // 3
+        "com.android.system.switch.android12", // 4
     };
 
     public static final String[] STATUSBAR_HEIGHT = {
