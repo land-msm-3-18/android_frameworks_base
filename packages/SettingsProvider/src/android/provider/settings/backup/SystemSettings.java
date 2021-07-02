@@ -86,7 +86,6 @@ public class SystemSettings {
         Settings.System.AMBIENT_NOTIFICATION_LIGHT,
         Settings.System.AMBIENT_NOTIFICATION_LIGHT_AUTOMATIC,
         Settings.System.NOTIFICATION_LIGHT_PULSE,
-        Settings.System.INCALL_FEEDBACK_VIBRATE,
         Settings.System.COLOR_BUCKET_OVERLAY,
         Settings.System.SCREENSHOT_SOUND,
     };

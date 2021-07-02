@@ -4955,23 +4955,6 @@ public final class Settings {
         public static final String PULSE_ON_NEW_TRACKS = "pulse_on_new_tracks";
 
         /**
-         * Which Vibration Pattern to use
-         * 0: dzzz-dzzz
-         * 1: dzzz-da
-         * 2: mm-mm-mm
-         * 3: da-da-dzzz
-         * 4: da-dzzz-da
-         * @hide
-         */
-        public static final String RINGTONE_VIBRATION_PATTERN = "ringtone_vibration_pattern";
-
-        /**
-         * Whether to vibrate on call state change
-         * @hide
-         */
-        public static final String INCALL_FEEDBACK_VIBRATE = "incall_feeedback_vibrate";
-
-        /**
          * Wheter to play notification sound and vibration if screen is ON
          * 0 - never
          * 1 - always
@@ -5203,7 +5186,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
             PRIVATE_SETTINGS.add(AMBIENT_NOTIFICATION_LIGHT);
             PRIVATE_SETTINGS.add(AMBIENT_NOTIFICATION_LIGHT_AUTOMATIC);
-            PRIVATE_SETTINGS.add(INCALL_FEEDBACK_VIBRATE);
    	    PRIVATE_SETTINGS.add(QS_PANEL_BG_USE_NEW_TINT);
             PRIVATE_SETTINGS.add(COLOR_BUCKET_OVERLAY);
             PRIVATE_SETTINGS.add(BACK_GESTURE_HAPTIC);
