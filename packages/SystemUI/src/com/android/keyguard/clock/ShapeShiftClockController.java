@@ -17,13 +17,11 @@
 package com.android.keyguard.clock;
 
 import android.app.WallpaperManager;
-import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint.Style;
-import android.provider.Settings;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,8 +76,6 @@ public class ShapeShiftClockController implements ClockPlugin {
     private TextClock mDate;
     private TextClock mTimeClockAccented;
 
-    private final Context mContext;
-
     /**
      * Create a DefaultClockController instance.
      *
@@ -89,23 +85,9 @@ public class ShapeShiftClockController implements ClockPlugin {
      */
     public ShapeShiftClockController(Resources res, LayoutInflater inflater,
             SysuiColorExtractor colorExtractor) {
-        this(res, inflater, colorExtractor, null);
-    }
-
-    /**
-     * Create a ShapeShiftClockController instance.
-     *
-     * @param res Resources contains title and thumbnail.
-     * @param inflater Inflater used to inflate custom clock views.
-     * @param colorExtractor Extracts accent color from wallpaper.
-     * @param context A context.
-     */
-    public ShapeShiftClockController(Resources res, LayoutInflater inflater,
-            SysuiColorExtractor colorExtractor, Context context) {
         mResources = res;
         mLayoutInflater = inflater;
-	mColorExtractor = colorExtractor;
-        mContext = context;
+        mColorExtractor = colorExtractor;
     }
 
     private void createViews() {
@@ -219,7 +201,6 @@ public class ShapeShiftClockController implements ClockPlugin {
 
     @Override
     public boolean shouldShowStatusArea() {
-        if (mContext == null) return true;
-        return Settings.System.getInt(mContext.getContentResolver(), Settings.System.CLOCK_SHOW_STATUS_AREA, 1) == 1;
+        return false;
     }
 }

@@ -5089,12 +5089,6 @@ public final class Settings {
         public static final String SHOW_FPS_OVERLAY = "show_fps_overlay";
 
         /**
-         * Whether to display status area (date & weather information) on the cLock
-         * @hide
-         */
-        public static final String CLOCK_SHOW_STATUS_AREA = "clock_show_status_area";
-
-        /**
          * DismissAll Button
          * @hide
          */

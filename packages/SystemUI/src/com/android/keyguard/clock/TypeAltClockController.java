@@ -16,13 +16,11 @@
 package com.android.keyguard.clock;
 
 import android.app.WallpaperManager;
-import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint.Style;
-import android.provider.Settings;
 import android.icu.text.DateFormat;
 import android.icu.text.DisplayContext;
 import android.view.LayoutInflater;
@@ -55,8 +53,6 @@ public class TypeAltClockController implements ClockPlugin {
      * LayoutInflater used to inflate custom clock views.
      */
     private final LayoutInflater mLayoutInflater;
-
-    private final Context mContext;
 
     /**
      * Extracts accent color from wallpaper.
@@ -95,23 +91,9 @@ public class TypeAltClockController implements ClockPlugin {
      */
     public TypeAltClockController(Resources res, LayoutInflater inflater,
             SysuiColorExtractor colorExtractor) {
-        this(res, inflater, colorExtractor, null);
-    }
-
-    /**
-     * Create a TypeAltClockController instance.
-     *
-     * @param res Resources contains title and thumbnail.
-     * @param inflater Inflater used to inflate custom clock views.
-     * @param colorExtractor Extracts accent color from wallpaper.
-     * @param context A context.
-     */
-    public TypeAltClockController(Resources res, LayoutInflater inflater,
-            SysuiColorExtractor colorExtractor, Context context) {
         mResources = res;
         mLayoutInflater = inflater;
         mColorExtractor = colorExtractor;
-        mContext = context;
     }
 
     private void createViews() {
@@ -238,7 +220,6 @@ public class TypeAltClockController implements ClockPlugin {
 
     @Override
     public boolean shouldShowStatusArea() {
-        if (mContext == null) return true;
-        return Settings.System.getInt(mContext.getContentResolver(), Settings.System.CLOCK_SHOW_STATUS_AREA, 1) == 1;
+        return false;
     }
 }

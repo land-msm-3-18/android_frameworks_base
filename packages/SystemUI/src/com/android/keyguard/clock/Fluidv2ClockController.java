@@ -17,13 +17,11 @@
 package com.android.keyguard.clock;
 
 import android.app.WallpaperManager;
-import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Paint.Style;
-import android.provider.Settings;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,7 +76,6 @@ public class Fluidv2ClockController implements ClockPlugin {
     private TextClock mDate;
     private TextClock mYear;
 
-    private final Context mContext;
 
     /**
      * Create a Fluidv2ClockController instance.
@@ -89,23 +86,9 @@ public class Fluidv2ClockController implements ClockPlugin {
      */
     public Fluidv2ClockController(Resources res, LayoutInflater inflater,
             SysuiColorExtractor colorExtractor) {
-        this(res, inflater, colorExtractor, null);
-    }
-
-    /**
-     * Create a Fluidv2ClockController instance.
-     *
-     * @param res Resources contains title and thumbnail.
-     * @param inflater Inflater used to inflate custom clock views.
-     * @param colorExtractor Extracts accent color from wallpaper.
-     * @param context A context.
-     */
-    public Fluidv2ClockController(Resources res, LayoutInflater inflater,
-            SysuiColorExtractor colorExtractor, Context context) {
         mResources = res;
         mLayoutInflater = inflater;
         mColorExtractor = colorExtractor;
-        mContext = context;
     }
 
     private void createViews() {
@@ -229,7 +212,6 @@ public class Fluidv2ClockController implements ClockPlugin {
 
     @Override
     public boolean shouldShowStatusArea() {
-        if (mContext == null) return true;
-        return Settings.System.getInt(mContext.getContentResolver(), Settings.System.CLOCK_SHOW_STATUS_AREA, 1) == 1;
+        return true;
     }
 }

@@ -18,7 +18,6 @@ package com.android.keyguard.clock;
 import static com.android.systemui.statusbar.phone.KeyguardClockPositionAlgorithm.CLOCK_USE_DEFAULT_Y;
 
 import android.app.WallpaperManager;
-import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -29,7 +28,6 @@ import android.graphics.drawable.GradientDrawable.Orientation;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.Paint.Style;
 import android.os.SystemProperties;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -79,8 +77,6 @@ public class StickerTagClockController implements ClockPlugin {
      */
     private View mView;
 
-    private final Context mContext;
-
     /**
      * Background of the tag view
      */
@@ -100,23 +96,9 @@ public class StickerTagClockController implements ClockPlugin {
      */
     public StickerTagClockController(Resources res, LayoutInflater inflater,
             SysuiColorExtractor colorExtractor) {
-        this(res, inflater, colorExtractor, null);
-    }
-
-    /**
-     * Create a StickerTagClockController instance.
-     *
-     * @param res Resources contains title and thumbnail.
-     * @param inflater Inflater used to inflate custom clock views.
-     * @param colorExtractor Extracts accent color from wallpaper.
-     * @param context A context.
-     */
-    public StickerTagClockController(Resources res, LayoutInflater inflater,
-            SysuiColorExtractor colorExtractor, Context context) {
         mResources = res;
         mLayoutInflater = inflater;
         mColorExtractor = colorExtractor;
-        mContext = context;
     }
 
     private void createViews() {
@@ -226,8 +208,7 @@ public class StickerTagClockController implements ClockPlugin {
 
     @Override
     public boolean shouldShowStatusArea() {
-        if (mContext == null) return true;
-        return Settings.System.getInt(mContext.getContentResolver(), Settings.System.CLOCK_SHOW_STATUS_AREA, 1) == 1;
+        return false;
     }
 
     private int generateColorDesat(int color) {
