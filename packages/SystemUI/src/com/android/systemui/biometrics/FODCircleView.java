@@ -39,7 +39,6 @@ import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.provider.Settings;
-import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -558,16 +557,6 @@ public class FODCircleView extends ImageView implements TunerService.Tunable {
         ThreadUtils.postOnBackgroundThread(() -> {
             dispatchHide();
         });
-    }
-
-    public int getHeight(boolean includeDecor) {
-        DisplayMetrics dm = new DisplayMetrics();
-        if (includeDecor) {
-            mWindowManager.getDefaultDisplay().getMetrics(dm);
-        } else {
-            mWindowManager.getDefaultDisplay().getRealMetrics(dm);
-        }
-        return dm.heightPixels - mPositionY + mSize / 2;
     }
 
     private void updateAlpha() {

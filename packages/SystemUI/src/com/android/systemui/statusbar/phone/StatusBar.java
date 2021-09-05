@@ -4870,7 +4870,4 @@ public class StatusBar extends SystemUI implements DemoMode,
         mDozeServiceHost.setDozeSuppressed(suppressed);
     }
 
-    public int getFodHeight(boolean includeDecor) {
-        return mFODCircleViewImpl.getHeight(includeDecor);
-    }
 }

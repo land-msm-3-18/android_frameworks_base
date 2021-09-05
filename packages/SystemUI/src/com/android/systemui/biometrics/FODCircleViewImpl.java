@@ -78,8 +78,4 @@ public class FODCircleViewImpl extends SystemUI implements CommandQueue.Callback
         }
     }
 
-    public int getHeight(boolean includeDecor) {
-         return mFodCircleView.getHeight(includeDecor);
-    }
-
 }
