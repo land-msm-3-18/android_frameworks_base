@@ -176,7 +176,6 @@ public final class ClockManager {
         addBuiltinClock(() -> new AndroidSDP3ClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new OctaviDigitalClockController(res, layoutInflater, colorExtractor));
         addBuiltinClock(() -> new SquaryClockController(res, layoutInflater, colorExtractor));
-        addBuiltinClock(() -> new OOSClockController(res, layoutInflater, colorExtractor));
 
         DisplayMetrics dm = res.getDisplayMetrics();
         mWidth = dm.widthPixels;
