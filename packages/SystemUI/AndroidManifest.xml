@@ -284,9 +284,6 @@
     <!-- DataSwitch tile -->
     <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
 
-    <!-- Asus Long screenshot -->
-    <uses-permission android:name="com.asus.stitchimage.permission.EXPORTED_FOR_ASUS_APPS"/>
-
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
     <!-- Smart space -->

@@ -1470,12 +1470,6 @@ public interface WindowManagerPolicy extends WindowManagerPolicyConstants {
      */
     boolean setAodShowing(boolean aodShowing);
 
-    /**
-     * Long screenshot
-     * @hide
-     */
-    void takeAlternativeScreenshot();
-
     public interface FingerListener {
         void powerDown(boolean z);
     }

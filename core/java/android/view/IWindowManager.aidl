@@ -767,10 +767,4 @@ interface IWindowManager
      * Notifies DisplayPolicy that overlays changed.
      */
     void onOverlayChanged();
-
-    /**
-     * Long screenshot
-     * @hide
-     */
-    void takeAlternativeScreenshot();
 }
