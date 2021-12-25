@@ -305,6 +305,8 @@
     <protected-broadcast android:name="com.google.android.systemui.smartspace.ENABLE_UPDATE"/>
     <protected-broadcast android:name="com.google.android.systemui.smartspace.EXPIRE_EVENT"/>
 
+    <uses-permission android:name="android.permission.MANAGE_GAME_MODE" android:protectionLevel="signature"/>
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"
@@ -906,5 +908,74 @@
         <!-- FPS Info -->
         <service android:name=".FPSInfoService"
                 android:exported="false" />
+<<<<<<< HEAD
+=======
+
+        <activity
+            android:name="com.android.systemui.statusbar.phone.LeftBackSwipeCustomApp"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.systemui.statusbar.phone.LeftBackSwipeCustomApp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.android.systemui.statusbar.phone.RightBackSwipeCustomApp"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.systemui.statusbar.phone.RightBackSwipeCustomApp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.android.systemui.statusbar.phone.LeftBackVerticalSwipeCustomApp"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.systemui.statusbar.phone.LeftBackVerticalSwipeCustomApp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.android.systemui.statusbar.phone.RightBackVerticalSwipeCustomApp"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.systemui.statusbar.phone.RightBackVerticalSwipeCustomApp" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Game Dashboard -->
+        <activity
+            android:theme="@style/GameMenuTheme"
+            android:name="org.aospextended.android.systemui.gamedashboard.GameMenuActivityWrapper"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"
+            android:finishOnCloseSystemDialogs="true"
+            android:showForAllUsers="true"/>
+
+        <activity
+            android:theme="@style/GameMenuTheme"
+            android:name="com.google.android.systemui.gamedashboard.GameDndConfigActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"
+            android:finishOnCloseSystemDialogs="true"
+            android:showForAllUsers="true"/>
+
+>>>>>>> 511c0af7bd42 (SystemUI: Import Google Game Dashboard)
     </application>
 </manifest>
