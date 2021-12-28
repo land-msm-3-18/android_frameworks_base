@@ -61,3 +61,7 @@
 
 # Custom rules
 -keep class org.fork.** { *; }
+
+# Google rules
+-keep class com.google.** { *; }
+-keep class vendor.** { *; }
