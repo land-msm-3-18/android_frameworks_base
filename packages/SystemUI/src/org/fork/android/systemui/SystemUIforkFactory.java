@@ -8,7 +8,7 @@ import com.google.android.systemui.gesture.BackGestureTfClassifierProviderGoogle
 
 import org.fork.android.systemui.dagger.DaggerGlobalRootComponentfork;
 import org.fork.android.systemui.dagger.GlobalRootComponentfork;
-import org.aospextended.android.systemui.dagger.SysUIComponentfork;
+import org.fork.android.systemui.dagger.SysUIComponentfork;
 
 import com.android.systemui.SystemUIFactory;
 import com.android.systemui.dagger.GlobalRootComponent;

@@ -49,7 +49,7 @@ import com.android.systemui.dagger.SysUISingleton;
 import com.google.android.systemui.gamedashboard.GameMenuActivity;
 import org.fork.android.systemui.gamedashboard.GameMenuActivityWrapper;
 
-import org.fork.android.systemui.theme.ThemeOverlayControllerAEX;
+import org.fork.android.systemui.theme.ThemeOverlayControllerfork;
 
 import dagger.Binds;
 import dagger.Module;
@@ -57,7 +57,7 @@ import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
 
 @Module(includes = {RecentsModule.class, StatusBarModule.class, KeyguardModule.class})
-public abstract class SystemUIAEXBinder {
+public abstract class SystemUIforkBinder {
     /**
      * Inject into AuthController.
      */
@@ -168,7 +168,7 @@ public abstract class SystemUIAEXBinder {
     @Binds
     @IntoMap
     @ClassKey(ThemeOverlayController.class)
-    public abstract SystemUI bindThemeOverlayController(ThemeOverlayControllerAEX sysui);
+    public abstract SystemUI bindThemeOverlayController(ThemeOverlayControllerfork sysui);
 
     /**
      * Inject into ToastUI.

@@ -1,4 +1,4 @@
-package org.aospextended.android.systemui.smartspace
+package org.fork.android.systemui.smartspace
 
 import android.content.ComponentName
 import android.content.Context
@@ -20,7 +20,7 @@ class KeyguardSmartspaceController @Inject constructor(
 ) {
     init {
         if (!featureFlags.isSmartspaceEnabled()) {
-            context.packageManager.setComponentEnabledSetting(ComponentName("com.android.systemui", "org.aospextended.android.systemui.keyguard.KeyguardSliceProviderAEX"), 1, 1)
+            context.packageManager.setComponentEnabledSetting(ComponentName("com.android.systemui", "org.fork.android.systemui.keyguard.KeyguardSliceProviderfork"), 1, 1)
         } else {
             mediaController.init()
             zenController.init()

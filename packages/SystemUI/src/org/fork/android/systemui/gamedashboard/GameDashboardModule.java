@@ -1,4 +1,4 @@
-package org.aospextended.android.systemui.gamedashboard;
+package org.fork.android.systemui.gamedashboard;
 
 import android.app.NotificationManager;
 import android.content.Context;

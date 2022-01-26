@@ -16,8 +16,8 @@ import com.google.android.systemui.smartspace.KeyguardMediaViewController;
 import com.google.android.systemui.smartspace.KeyguardZenAlarmViewController;
 import com.google.android.systemui.smartspace.SmartSpaceController;
 
-import org.aospextended.android.systemui.smartspace.KeyguardSmartspaceController;
-import org.aospextended.android.systemui.theme.ThemeOverlayControllerAEX;
+import org.fork.android.systemui.smartspace.KeyguardSmartspaceController;
+import org.fork.android.systemui.theme.ThemeOverlayControllerfork;
 
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardViewController;
@@ -211,7 +211,7 @@ public abstract class SystemUIforkModule {
     abstract DozeHost provideDozeHost(DozeServiceHost dozeServiceHost);
 
     @Binds
-    abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerAEX themeOverlayController);
+    abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerfork themeOverlayController);
 
     // Google
     @Provides

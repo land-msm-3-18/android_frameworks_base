@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.aospextended.android.systemui.gamedashboard;
+package org.fork.android.systemui.gamedashboard;
 
 import android.content.Context;
 import android.content.Intent;

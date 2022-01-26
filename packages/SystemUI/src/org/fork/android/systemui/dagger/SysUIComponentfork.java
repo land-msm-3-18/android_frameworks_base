@@ -7,9 +7,9 @@ import com.android.systemui.dagger.SystemUIBinder;
 import com.android.systemui.dagger.SysUIComponent;
 import com.android.systemui.dagger.SystemUIModule;
 
-import org.aospextended.android.systemui.gamedashboard.GameDashboardModule;
-import org.aospextended.android.systemui.keyguard.KeyguardSliceProviderAEX;
-import org.aospextended.android.systemui.smartspace.KeyguardSmartspaceController;
+import org.fork.android.systemui.gamedashboard.GameDashboardModule;
+import org.fork.android.systemui.keyguard.KeyguardSliceProviderfork;
+import org.fork.android.systemui.smartspace.KeyguardSmartspaceController;
 
 import dagger.Subcomponent;
 

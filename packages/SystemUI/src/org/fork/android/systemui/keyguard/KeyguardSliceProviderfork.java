@@ -1,4 +1,4 @@
-package org.aospextended.android.systemui.keyguard;
+package org.fork.android.systemui.keyguard;
 
 import android.app.PendingIntent;
 import android.graphics.Bitmap;
@@ -32,7 +32,7 @@ import java.lang.ref.WeakReference;
 
 import javax.inject.Inject;
 
-public class KeyguardSliceProviderAEX extends KeyguardSliceProvider implements SmartSpaceUpdateListener {
+public class KeyguardSliceProviderfork extends KeyguardSliceProvider implements SmartSpaceUpdateListener {
     private static final boolean DEBUG = Log.isLoggable("KeyguardSliceProvider", 3);
     private final Uri mCalendarUri = Uri.parse("content://com.android.systemui.keyguard/smartSpace/calendar");
     private boolean mHideSensitiveContent;
@@ -44,13 +44,13 @@ public class KeyguardSliceProviderAEX extends KeyguardSliceProvider implements S
 
     private static class AddShadowTask extends AsyncTask<Bitmap, Void, Bitmap> {
         private final float mBlurRadius;
-        private final WeakReference<KeyguardSliceProviderAEX> mProviderReference;
+        private final WeakReference<KeyguardSliceProviderfork> mProviderReference;
         private final SmartSpaceCard mWeatherCard;
 
-        AddShadowTask(KeyguardSliceProviderAEX keyguardSliceProviderAEX, SmartSpaceCard smartSpaceCard) {
-            mProviderReference = new WeakReference<>(keyguardSliceProviderAEX);
+        AddShadowTask(KeyguardSliceProviderfork keyguardSliceProviderfork, SmartSpaceCard smartSpaceCard) {
+            mProviderReference = new WeakReference<>(keyguardSliceProviderfork);
             mWeatherCard = smartSpaceCard;
-            mBlurRadius = keyguardSliceProviderAEX.getContext().getResources().getDimension(R.dimen.smartspace_icon_shadow);
+            mBlurRadius = keyguardSliceProviderfork.getContext().getResources().getDimension(R.dimen.smartspace_icon_shadow);
         }
 
         @Override
@@ -60,13 +60,13 @@ public class KeyguardSliceProviderAEX extends KeyguardSliceProvider implements S
 
         @Override
         public void onPostExecute(Bitmap bitmap) {
-            KeyguardSliceProviderAEX keyguardSliceProviderAEX;
+            KeyguardSliceProviderfork keyguardSliceProviderfork;
             synchronized (this) {
                 mWeatherCard.setIcon(bitmap);
-                keyguardSliceProviderAEX = (KeyguardSliceProviderAEX) mProviderReference.get();
+                keyguardSliceProviderfork = (KeyguardSliceProviderfork) mProviderReference.get();
             }
-            if (keyguardSliceProviderAEX != null) {
-                keyguardSliceProviderAEX.notifyChange();
+            if (keyguardSliceProviderfork != null) {
+                keyguardSliceProviderfork.notifyChange();
             }
         }
 
@@ -105,7 +105,7 @@ public class KeyguardSliceProviderAEX extends KeyguardSliceProvider implements S
 
     @Override
     public Slice onBindSlice(Uri uri) {
-        Trace.beginSection("KeyguardSliceProviderAEX#onBindSlice");
+        Trace.beginSection("KeyguardSliceProviderfork#onBindSlice");
         Slice slice;
         IconCompat iconCompat;
         ListBuilder listBuilder = new ListBuilder(getContext(), mSliceUri, -1);
