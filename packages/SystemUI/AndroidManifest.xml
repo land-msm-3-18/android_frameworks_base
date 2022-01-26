@@ -912,7 +912,7 @@
         <!-- Game Dashboard -->
         <activity
             android:theme="@style/GameMenuTheme"
-            android:name="org.aospextended.android.systemui.gamedashboard.GameMenuActivityWrapper"
+            android:name="org.fork.android.systemui.gamedashboard.GameMenuActivityWrapper"
             android:exported="false"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
