@@ -253,10 +253,6 @@ public class NotificationPanelViewController extends PanelViewController {
     private final NotificationStackScrollLayoutController mNotificationStackScrollLayoutController;
     private final NotificationIconAreaController mNotificationIconAreaController;
 
-    // Omni additions
-    private NotificationLightsView mPulseLightsView;
-    private boolean mPulseLightHandled;
-
     // Cap and total height of GSans Clock font. Needs to be adjusted when font for the big clock is
     // changed.
     private static final int CAP_HEIGHT = 716;
