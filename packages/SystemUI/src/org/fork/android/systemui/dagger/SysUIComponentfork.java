@@ -19,7 +19,7 @@ import dagger.Subcomponent;
         DependencyProvider.class,
         GameDashboardModule.class,
         SystemUIModule.class,
-        SystemUforkBinder.class,
+        SystemUIforkBinder.class,
         SystemUIforkModule.class})
 public interface SysUIComponentfork extends SysUIComponent {
     @SysUISingleton
